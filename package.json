@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx watch src/server.ts",
+    "dev": "tsx watch --env-file .env src/server.ts",
     "start": "nodemon --watch 'src/' --exec 'ts-node src/server.ts' -e ts"
   },
   "keywords": [],
@@ -22,7 +22,10 @@
   },
   "dependencies": {
     "@types/node": "^20.12.5",
+    "dotenv": "^16.4.5",
+    "env": "^0.0.2",
     "eslint-config-prettier": "^9.1.0",
+    "fastify": "^4.26.2",
     "prettier": "^3.2.5"
   }
 }
