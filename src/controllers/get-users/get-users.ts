@@ -3,7 +3,7 @@ import { ZodTypeProvider } from "fastify-type-provider-zod";
 import { prisma } from "../../lib/prisma";
 import { z } from "zod";
 
-export async function getUsersControler(app:FastifyInstance){
+export async function getUsers(app:FastifyInstance){
     app
     .withTypeProvider<ZodTypeProvider>()
     .get('/users',{schema:{

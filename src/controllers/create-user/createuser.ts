@@ -21,10 +21,12 @@ export async function createUser(app:FastifyInstance){
   }}, async (req,res) => {
     const { firstName, lastName, email, password } = req.body
 
-    const userWithSameEmail = await prisma.user.findMany({
+    const userWithSameEmail = await prisma.user.findFirst({
       where:{email}
     })
-
+    
+    console.log(userWithSameEmail)
+    
     if(userWithSameEmail){
       throw new Error('User already exists')
     }

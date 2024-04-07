@@ -3,12 +3,13 @@ import { config } from 'dotenv'
 
 
 import {  serializerCompiler, validatorCompiler } from "fastify-type-provider-zod"
-import { getUsersControler } from './controllers/get-users/get-users'
+import { getUsers } from './controllers/get-users/get-users'
 import { createUser } from './controllers/create-user/createuser'
 import { updateUser } from './controllers/update-user/update-user'
+import { deleteUser } from './controllers/delete-user/delete-user'
 
 config()
-const PORT = parseInt(process.env.PORT as string)
+const PORT = parseInt(process.env.PORT as string) || 3333
 const app = fastify()
 
 app.get('/',(req,res) => {
@@ -21,9 +22,10 @@ app.get('/',(req,res) => {
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
-app.register(getUsersControler)
+app.register(getUsers)
 app.register(createUser)
 app.register(updateUser)
+app.register(deleteUser)
 
 app.listen({port:PORT})
 .then(() => {

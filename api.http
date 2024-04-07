@@ -7,14 +7,14 @@ post http://localhost:3333/users
 Content-Type: application/json
 
 {
-  "firstName":"Sara Willow",
-  "lastName":"Nipute",
-  "email":"Willow@chan.com",
-  "password":"12344321"
+  "firstName":"Elisa",
+  "lastName":"Rafael",
+  "email":"Elisa@Lisa11.com",
+  "password":"10101010"
 }
 
 ###
-patch http://localhost:3333/users/3d1adb98-24a2-4722-9bab-1fa2e9ac3537
+patch http://localhost:3333/users/fd58c004-7393-4252-bc75-396d7edd3108
 Content-Type: application/json
 
 {
@@ -22,3 +22,7 @@ Content-Type: application/json
   "email":"penaswild1@gmail.com"
 
 }
+
+###
+DELETE http://localhost:3333/users/fd58c004-7393-4252-bc75-396d7edd3108
+Content-Type: application/json
