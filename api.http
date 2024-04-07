@@ -1,0 +1,24 @@
+###
+GET http://localhost:3333/users
+Content-Type: application/json
+
+###
+post http://localhost:3333/users
+Content-Type: application/json
+
+{
+  "firstName":"Sara Willow",
+  "lastName":"Nipute",
+  "email":"Willow@chan.com",
+  "password":"12344321"
+}
+
+###
+patch http://localhost:3333/users/3d1adb98-24a2-4722-9bab-1fa2e9ac3537
+Content-Type: application/json
+
+{
+  
+  "email":"penaswild1@gmail.com"
+
+}
