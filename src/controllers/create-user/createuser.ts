@@ -25,7 +25,6 @@ export async function createUser(app:FastifyInstance){
       where:{email}
     })
     
-    console.log(userWithSameEmail)
     
     if(userWithSameEmail){
       throw new Error('User already exists')
